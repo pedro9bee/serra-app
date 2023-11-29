@@ -1,0 +1,15 @@
+version: '3'
+
+services:
+  # Configuração do Next.js
+  serra-app:
+    container_name: serra-app
+    build:
+      context: .
+      dockerfile: Dockerfile
+    ports:
+      - "3000:3000"
+    volumes:
+      - ./src:/usr/src/app/src
+    environment:
+      - NODE_ENV=production
